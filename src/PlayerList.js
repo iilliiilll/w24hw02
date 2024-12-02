@@ -9,17 +9,22 @@ const players = [
   { name: '디오구 달로', position: 'defender', number: 20, image: 'images/dalot.png' },
   { name: '안드레 오나나', position: 'goalkeeper', number: 24, image: 'images/onana.png' },
   { name: '해리 매과이어', position: 'defender', number: 5, image: 'images/maguire.png' },
+  { name: '루크 쇼', position: 'defender', number: 23, image: 'images/shaw.png' },
+  { name: '메이슨 마운트', position: 'midfielder', number: 7, image: 'images/mount.png' },
+  { name: '라스무스 호일룬', position: 'forward', number: 9, image: 'images/hojlund.png' },
+  { name: '조슈아 지르크지', position: 'forward', number: 11, image: 'images/zirkzee.png' },
+  { name: '코비 마이누', position: 'midfielder', number: 37, image: 'images/mainoo.png' },
+  { name: '아마드 디알로', position: 'forward', number: 16, image: 'images/diallo.png' },
 ];
 
 function PlayerList() {
   // 포지션별 그룹화
   const groupedPlayers = players.reduce((groups, player) => {
-    if (!groups[player.position]) {
-      groups[player.position] = [];
-    }
+    groups[player.position] = groups[player.position] || [];
     groups[player.position].push(player);
     return groups;
-  }, {});
+  }, {}); // 초기값: 빈 객체
+  
 
   return (
     <div className="player-list">
@@ -41,19 +46,16 @@ function PlayerList() {
 }
 
 // 포지션 이름을 한글로 변환
+const positionNames = {
+  forward: '공격수',
+  midfielder: '미드필더',
+  defender: '수비수',
+  goalkeeper: '골키퍼',
+};
+
 function getPositionName(position) {
-  switch (position) {
-    case 'forward':
-      return '공격수';
-    case 'midfielder':
-      return '미드필더';
-    case 'defender':
-      return '수비수';
-    case 'goalkeeper':
-      return '골키퍼';
-    default:
-      return '기타';
-  }
+  return positionNames[position] || '기타';
 }
+
 
 export default PlayerList;

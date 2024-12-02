@@ -1,18 +1,36 @@
 /* 전체 배경 및 텍스트 */
 body {
-  font-family: Arial, sans-serif;
+  background-color: #ddd4d4; /* 연한 회색 */
+  font-family: Arial, sans-serif; /* 기본 글꼴 */
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
 }
 
-h1 {
-  text-align: center;
-  margin: 0;
+
+/* Header 컨테이너 스타일 */
+.header-container {
+  display: flex; /* 가로 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  background-color: #d71920; /* 배경색 */
+  color: white;
   padding: 20px;
-  background-color: #ff0d0d;
-  color: #f5f5f5;
+  justify-content: center; /* 전체 가운데 정렬 */
+  gap: 20px; /* 로고와 텍스트 간 간격 */
 }
+
+/* 로고 스타일 */
+.header-logo {
+  width: 50px; /* 로고 크기 */
+  height: auto;
+}
+
+/* 텍스트 스타일 */
+.header-text {
+  margin: 0;
+  font-size: 24px;
+  text-align: center;
+}
+
 
 .player-list {
   padding: 20px;
@@ -26,10 +44,14 @@ h1 {
 .position-title {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin: 40px 0 20px; /* 위아래 간격 조정 */
   text-align: center;
   color: #d71920;
+  border-bottom: 2px solid #d71920; /* 밑줄 추가 */
+  display: inline-block;
+  padding-bottom: 5px;
 }
+
 
 /* 카드 컨테이너 */
 .cards-container {
@@ -48,6 +70,8 @@ h1 {
   text-align: center;
   padding: 20px;
   width: 200px;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .player-image {
@@ -65,4 +89,31 @@ h1 {
   margin: 0;
   font-size: 14px;
   color: gray;
+}
+
+.player-card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.player-card:hover {
+  transform: scale(1.05);
+}
+
+.player-name {
+  cursor: pointer;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.player-name:hover {
+  color: #d71920; /* 마우스 올렸을 때 강조 */
+}
+
+.player-details {
+  background-color: #f9f9f9; /* 약간 더 밝은 배경 */
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  color: #333;
+  text-align: left;
 }
