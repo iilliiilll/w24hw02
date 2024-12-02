@@ -1,6 +1,6 @@
 /* 전체 배경 및 텍스트 */
 body {
-  background-color: #ddd4d4; /* 연한 회색 */
+  background-color: #f3f1f1; /* 연한 회색 */
   font-family: Arial, sans-serif; /* 기본 글꼴 */
   margin: 0;
   padding: 0;
@@ -14,7 +14,6 @@ body {
   background-color: #d71920; /* 배경색 */
   color: white;
   padding: 20px;
-  justify-content: center; /* 전체 가운데 정렬 */
   gap: 20px; /* 로고와 텍스트 간 간격 */
 }
 
@@ -59,19 +58,20 @@ body {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  align-items: flex-start; /* 카드들이 위쪽 정렬 */
 }
 
 /* 선수 카드 */
 .player-card {
+  flex: 0 0 auto; /* 각 카드의 크기를 고정 */
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   padding: 20px;
-  width: 200px;
-  margin-bottom: 20px;
-  cursor: pointer;
+  width: 200px; /* 카드의 고정 너비 */
+  transition: all 0.2s ease-in-out; /* 부드러운 전환 */
 }
 
 .player-image {
@@ -116,4 +116,16 @@ body {
   margin-top: 10px;
   color: #333;
   text-align: left;
+}
+
+.footer {
+  background-color: black; /* 배경색 검은색 */
+  color: white; /* 글씨색 흰색 */
+  text-align: center; /* 중앙 정렬 */
+  padding: 10px 0; /* 위아래 여백 */
+  font-size: 12px; /* 글씨 크기 */
+  position: fixed; /* 항상 화면 하단에 고정 */
+  bottom: 0;
+  width: 100%; /* 화면 전체 너비 */
+  position: relative;
 }
